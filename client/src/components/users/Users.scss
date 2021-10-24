@@ -1,0 +1,13 @@
+.cards-list {
+  @apply flex flex-row flex-wrap items-stretch;
+}
+
+.card {
+  @apply flex-1 m-4 p-5 w-auto;
+  @apply border border-gray-900 rounded-md shadow-2xl;
+  @apply bg-gray-900 text-gray-300;
+  &__prop {
+    @apply font-light;
+    @apply font-thin;
+  }
+}

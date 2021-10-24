@@ -7,9 +7,10 @@ export const useUsers = () => {
     const getUsers = async () => {
       const res = await fetch(USERS_URL);
       const resUsers = await res.json();
+      console.log(resUsers);
       setUsers(resUsers);
     };
     getUsers();
-  }, [users]);
+  }, []);
   return { users };
 };

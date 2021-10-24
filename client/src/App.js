@@ -1,8 +1,9 @@
-import { Users } from "./components/Users";
+import { Users } from "./components/users/Users.js";
+import "./App.scss";
 
 function App() {
   return (
-    <div>
+    <div className="app">
       <Users />
     </div>
   );
