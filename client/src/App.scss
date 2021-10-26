@@ -4,3 +4,14 @@ body {
 .app {
   @apply container mx-auto px-2;
 }
+
+.input {
+  @apply bg-gray-900 border rounded-md border-gray-400 text-gray-400;
+  @apply px-2;
+}
+
+.btn {
+  @apply bg-gray-900 border rounded-md border-gray-400 text-gray-400;
+  @apply px-2 py-1;
+  @apply hover:text-gray-200 hover:border-gray-200 hover:bg-gray-800;
+}

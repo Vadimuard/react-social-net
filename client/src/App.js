@@ -1,10 +1,10 @@
-import { Users } from "./components/users/Users.js";
-import "./App.scss";
+import './App.scss';
+import { FilteredUsers } from './components/users/FilteredUsers.js';
 
 function App() {
   return (
     <div className="app">
-      <Users />
+      <FilteredUsers />
     </div>
   );
 }

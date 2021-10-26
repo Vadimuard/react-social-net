@@ -1,9 +1,6 @@
-import { useUsers } from "../../hooks";
-import { UserCard } from "./UserCard";
-import "./Users.scss";
+import { UserCard } from './UserCard';
 
-export const Users = () => {
-  const { users } = useUsers();
+export const Users = ({ users }) => {
   return (
     <ul className="cards-list">
       {users.map((user) => (
