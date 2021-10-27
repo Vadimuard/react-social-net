@@ -1,4 +1,4 @@
-import { UserCard } from './UserCard';
+import { UserCard, UserInterface } from './UserCard';
 import PropTypes from 'prop-types';
 
 const Users = ({ users }) => {
@@ -14,7 +14,7 @@ const Users = ({ users }) => {
 };
 
 Users.propTypes = {
-  users: PropTypes.node.isRequired,
+  users: PropTypes.arrayOf(UserInterface),
 };
 
 export { Users };

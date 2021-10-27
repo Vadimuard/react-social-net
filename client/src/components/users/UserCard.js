@@ -1,5 +1,15 @@
 import PropTypes from 'prop-types';
 
+const UserInterface = PropTypes.shape({
+  name: PropTypes.string,
+  username: PropTypes.string,
+  email: PropTypes.string,
+  website: PropTypes.string,
+  address: PropTypes.shape({
+    city: PropTypes.string,
+  }),
+});
+
 const UserCard = ({ user }) => {
   return (
     <>
@@ -17,7 +27,7 @@ const UserCard = ({ user }) => {
 };
 
 UserCard.propTypes = {
-  user: PropTypes.node.isRequired,
+  user: UserInterface,
 };
 
-export { UserCard };
+export { UserCard, UserInterface };
