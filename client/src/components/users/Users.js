@@ -16,5 +16,4 @@ const Users = ({ users }) => {
 Users.propTypes = {
   users: PropTypes.arrayOf(UserInterface),
 };
-
 export { Users };

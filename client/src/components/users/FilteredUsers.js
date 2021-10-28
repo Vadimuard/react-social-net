@@ -1,79 +1,42 @@
 import { useUsers } from '../../hooks';
 import { useReducer } from 'react';
 import { Users } from './Users';
+import { Filter } from '../filter/Filter';
+import { SORT_BY } from '../filter/Filter';
 
 import './Users.scss';
+
+export const ACTIONS = {
+  APPLY_FILTER: 'apply-filter',
+  RESET_FILTER: 'reset-filter',
+  SORT_BY: 'sort-by',
+};
 
 const initialFilterState = {
   email: '',
   website: '',
   city: '',
+  sort_by: SORT_BY.DEFAULT,
 };
 
 const reducer = (state, action) => {
-  if (action.type === 'reset') {
-    return initialFilterState;
+  switch (action.type) {
+    case ACTIONS.APPLY_FILTER:
+      return { ...state, ...(action.payload) };
+    case ACTIONS.RESET_FILTER:
+      return { ...state, ...initialFilterState };
+    case ACTIONS.SORT_BY:
+      return { ...state, ...(action.payload) };
   }
-  const result = { ...state };
-  result[action.type] = action.value;
-  return result;
 };
 
 export const FilteredUsers = () => {
-  const [filter, dispatch] = useReducer(reducer, initialFilterState);
-  const { email, website, city } = filter;
-  const { users } = useUsers(filter);
+  const [state, dispatch] = useReducer(reducer, initialFilterState);
+  const { users } = useUsers(state);
 
-  const handleInput = (ev) => {
-    const { name, value } = ev.target;
-    dispatch({ type: name, value });
-  };
-
-  const handleReset = () => {
-    dispatch({ type: 'reset' });
-  };
-
-  // TODO sort by username
   return (
     <>
-      <div className="cards-filters text-gray-400">
-        <div className="text-lg font-bold mx-4 my-2">Filter users</div>
-        <div className="cards-filters__inputs">
-          <div className="cards-filters__item">
-            <div>Email</div>
-            <input
-              className="input"
-              name="email"
-              type="text"
-              value={email}
-              onChange={handleInput}
-            />
-          </div>
-          <div className="cards-filters__item">
-            <div>Website</div>
-            <input
-              className="input"
-              name="website"
-              type="text"
-              value={website}
-              onChange={handleInput}
-            />
-          </div>
-          <div className="cards-filters__item">
-            <div>City</div>
-            <input
-              className="input"
-              name="city"
-              type="text"
-              value={city}
-              onChange={handleInput}
-            />
-          </div>
-        </div>
-        <button className="btn" onClick={handleReset}>
-          Reset filters
-        </button>
-      </div>
+      <Filter dispatch={dispatch} />
       <Users users={users} />
     </>
   );

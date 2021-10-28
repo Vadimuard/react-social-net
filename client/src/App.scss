@@ -15,3 +15,7 @@ body {
   @apply px-2 py-1;
   @apply hover:text-gray-200 hover:border-gray-200 hover:bg-gray-800;
 }
+
+.select {
+  @apply btn;
+}

@@ -1,0 +1,23 @@
+.cards-filters {
+  @apply border border-gray-900 rounded-md;
+  @apply bg-gray-900 m-4;
+
+  &__inputs {
+    @apply mx-4 py-4 grid grid-cols-1 md:grid-cols-2 gap-x-44 gap-y-4;
+  }
+
+  &__item {
+    @apply grid grid-cols-3;
+    input {
+      @apply col-span-2;
+    }
+  }
+
+  &__footer {
+    @apply flex justify-between;
+  }
+
+  .btn, .select {
+    @apply m-4;
+  }
+}
