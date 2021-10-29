@@ -1,11 +1,15 @@
 import './App.scss';
 import { FilteredUsers } from './components/users/FilteredUsers.js';
+import { Header } from './components/header/Header';
 
 function App() {
   return (
-    <div className="app">
-      <FilteredUsers />
-    </div>
+    <>
+      <Header />
+      <div className='app'>
+        <FilteredUsers />
+      </div>
+    </>
   );
 }
 

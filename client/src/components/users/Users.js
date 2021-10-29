@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 
 const Users = ({ users }) => {
   return (
-    <ul className='cards-list'>
+    <ul className='users-cards-list'>
       {users.map((user) => (
         <li key={user.id} className='card'>
           <UserCard user={user} />

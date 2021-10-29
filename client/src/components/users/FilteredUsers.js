@@ -4,8 +4,6 @@ import { Users } from './Users';
 import { Filter } from '../filter/Filter';
 import { SORT_BY } from '../filter/Filter';
 
-import './Users.scss';
-
 export const ACTIONS = {
   APPLY_FILTER: 'apply-filter',
   RESET_FILTER: 'reset-filter',

@@ -1,8 +1,14 @@
 body {
   @apply bg-gray-800;
 }
+
 .app {
   @apply container mx-auto px-2;
+}
+
+.header {
+  @apply  text-gray-400;
+  @apply bg-gray-900 border rounded-b-2xl border-gray-900 p-4;
 }
 
 .input {
@@ -16,6 +22,46 @@ body {
   @apply hover:text-gray-200 hover:border-gray-200 hover:bg-gray-800;
 }
 
+.btn-cancel {
+  @apply bg-red-500 border border-red-500 text-white;
+  @apply hover:bg-red-400 hover:border-red-400 hover:text-gray-100;
+}
+
 .select {
   @apply btn;
+}
+
+.cards-list {
+  @apply flex flex-col;
+}
+
+.card {
+  @apply m-4 p-5 w-auto;
+  @apply border border-gray-900 rounded-md shadow-2xl;
+  @apply bg-gray-900 text-gray-300;
+}
+
+.modal {
+  @apply bg-gray-800 rounded-md;
+  position: absolute;
+  top: 40px;
+  left: 40px;
+  right: 40px;
+  bottom: 40px;
+  overflow: auto;
+  outline: none;
+  -webkit-overflow-scrolling: touch;
+}
+
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(30, 30, 30, 0.7);
+}
+
+.login-btn {
+  @apply bg-white text-gray-600 border border-white rounded-md px-2 py-1;
 }
